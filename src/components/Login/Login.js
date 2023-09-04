@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './Login.css';
 
 const Login = ({ onLogin }) => {
+  const navigate = useNavigate();
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -16,27 +20,31 @@ const Login = ({ onLogin }) => {
 
       const data = await response.json();
       onLogin(data.token);
+      navigate('/produtos');
     } catch (error) {
       console.error('Erro ao fazer login:', error);
     }
   };
 
   return (
-    <div>
-      <h2>Login</h2>
+    <div className="container">
+      <h2 className="login-heading">Faça seu login</h2>
       <input
         type="text"
-        placeholder="Username"
+        className="input-login"
+        placeholder="Usuário"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
       />
       <input
         type="password"
-        placeholder="Password"
+        className="input-login"
+        placeholder="Senha"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
+        style={{ marginTop: '10px' }}
       />
-      <button onClick={handleLogin}>Login</button>
+      <button className="botao-login" onClick={handleLogin} style={{ marginBottom: '10px', marginTop: '10px'}}>Login</button>
     </div>
   );
 };

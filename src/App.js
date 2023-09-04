@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Login from './components/Login';
-import ProductList from './components/ProductList';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Login from './components/Login/Login';
+import ProductList from './components/ListaProdutos/ProductList';
 import CadastroProduto from './components/CadastroProduto'; 
 
 function App() {
@@ -28,12 +28,16 @@ function App() {
 
   return (
     <div className="app">
+    <div className="Logo-image-container">
+      <img src="/wsslogo.png" alt="Logo" className="Logo-image" />
+    </div>
     <Router>
       {!token ? (
         <Login onLogin={handleLogin} />
       ) : (
         <Routes>
-        <Route path="/" element={<ProductList token={token} />} />
+        <Route path="/login" element={<Login onLogin={handleLogin}/>} />
+        <Route path="/produtos" element={<ProductList token={token} />} />
         <Route path="/cadastro-produto" element={<CadastroProduto token={token} />} />
       </Routes>
       )}

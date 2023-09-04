@@ -1,0 +1,47 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centralize verticalmente */
+    align-items: center; /* Centralize horizontalmente */
+    gap: 24px;
+  }
+
+/* Seu arquivo de estilos CSS */
+.login-heading {
+    color: var(--Primary, #545F71);
+  
+    /* Estilos de tipografia */
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 36px;
+    letter-spacing: -0.64px;
+  }
+
+.botao-login {
+    display: flex;
+    width: 327px;
+    height: 48px;
+    padding: 12px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 6px;
+    background: var(--Primary, #545F71);
+    color: white; /* Cor da fonte branca */
+    border: none; /* Remove a borda */
+}
+  
+  
+
+.input-login {
+    display: flex;
+    width: 327px; /* Mesma largura que o botão de login */
+    height: 48px; /* Mesma altura que o botão de login */
+    padding: 12px 16px;
+    gap: 12px;
+    border-radius: 6px;
+    border: 1px solid var(--Primary, #545F71);
+    background: var(--White, #FFF);
+    align-items: center; /* Centralize verticalmente o conteúdo */
+  }
