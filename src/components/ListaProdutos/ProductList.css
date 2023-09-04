@@ -5,7 +5,8 @@
     opacity: 0.8;   
     border: none; /* Remova a borda */
     background: white; /* Fundo branco */
-    margin-right: 30px; /* Adicione a margem desejada à direita */
+    margin-right: 0px; /* Adicione a margem desejada à direita */
+    margin-left: 20px;
 }
 
 .botao-excluir {
@@ -15,6 +16,8 @@
     opacity: 0.8;
     border: none; /* Remova a borda */
     background: white; /* Fundo branco */
+    margin-right: 0px; /* Adicione a margem desejada à direita */
+    margin-left: 0px; /* Adicione a margem desejada à direita */
 }
 
 .botao-adicionar {
@@ -45,9 +48,11 @@
 }
 
 .product-header {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: none; /* Remova a borda */
+  border-radius: 6px;
   border-bottom: 1px solid #000000; /* Adiciona uma borda inferior */
-  padding-bottom: 5px; /* Espaço abaixo da borda */
 }
 
 .listagem-heading {
@@ -59,4 +64,19 @@
   font-weight: 700;
   line-height: 36px;
   letter-spacing: -0.64px;
+}
+
+.product-bla {
+  margin-left: 100px; 
+  margin-right: 100px;
+}
+
+.product-blapreco {
+  margin-left: 100px; 
+  margin-right: 25px;
+}
+
+.product-blaprecoheader {
+  margin-left: 90px; 
+  margin-right: 140px;
 }

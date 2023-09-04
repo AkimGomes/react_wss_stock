@@ -83,27 +83,23 @@ const ProductList = ({ token }) => {
         <ul className="product-list">
           <li className="product-header">
             <div className="row">
-              <div className="col-md-4"><strong>Nome</strong></div>
-              <div className="col-md-4"><strong>Tipo</strong></div>
-              <div className="col-md-2"><strong>Preço</strong></div>
+              <div className="col product-bla"><strong>Nome</strong></div>
+              <div className="col product-bla"><strong>Tipo</strong></div>
+              <div className="col product-blaprecoheader"><strong>Preço</strong></div>
             </div>
           </li>
           {products.map((product) => (
             <li key={product.id} className="product-item">
               <div className="row">
-                <div className="product-info col-md-4">{product.nome}</div>
-                <div className="product-info col-md-4">{product.tipo_produto}</div>
-                <div className="product-info col-md-2">{product.preco_venda}</div>
-                <div className="product-info col-md-1">
-                  <button className='botao-editar' onClick={() => handleUpdate(product.id)}>
-                    <img src="/editar.png" alt="Atualizar" className="botao-editar" />
-                  </button>
-                </div>
-                <div className="product-info col-md-1"> 
-                  <button className='botao-excluir' onClick={() => handleDelete(product.id)}>
-                    <img src="/excluir.png" alt="Excluir" className="botao-excluir" />
-                  </button>
-                </div>
+                <div className="col product-bla">{product.nome}</div>
+                <div className="col product-bla">{product.tipo_produto}</div>
+                <div className="col product-blapreco">{product.preco_venda}</div>
+                <button className='col botao-editar' onClick={() => handleUpdate(product.id)}>
+                  <img src="/editar.png" alt="Atualizar" className="botao-editar" />
+                </button>
+                <button className='col botao-excluir' onClick={() => handleDelete(product.id)}>
+                  <img src="/excluir.png" alt="Excluir" className="botao-excluir" />
+                </button>
                 </div>
             </li>
           ))}
