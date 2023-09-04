@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './ProductList.css';
+import { useNavigate } from 'react-router-dom';
 
 const ProductList = ({ token }) => {
+  const navigate = useNavigate();
   const [products, setProducts] = useState([]);
 
   const fetchProducts = async () => {
@@ -64,40 +66,52 @@ const ProductList = ({ token }) => {
     }
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    navigate('/login'); 
+  };
+
   return (
-    <div className='container'>
-      <h2 className='listagem-heading'>Lista de Produtos</h2>
-      <ul className="product-list">
-        <li className="product-header">
-          <div className="row">
-            <div className="col-md-4"><strong>Nome</strong></div>
-            <div className="col-md-4"><strong>Tipo</strong></div>
-            <div className="col-md-2"><strong>Preço</strong></div>
-          </div>
-        </li>
-        {products.map((product) => (
-          <li key={product.id} className="product-item">
+    <div>
+      <div>
+        <button className="botao-deslogar" onClick={handleLogout}>
+          <img src="/deslogar.png"/>
+        </button>
+      </div>
+      <div className='container'>
+        <h2 className='listagem-heading'>Lista de Produtos</h2>
+        <ul className="product-list">
+          <li className="product-header">
             <div className="row">
-              <div className="product-info col-md-4">{product.nome}</div>
-              <div className="product-info col-md-4">{product.tipo_produto}</div>
-              <div className="product-info col-md-2">{product.preco_venda}</div>
-              <div className="product-info col-md-1">
-                <button className='botao-editar' onClick={() => handleUpdate(product.id)}>
-                  <img src="/editar.png" alt="Atualizar" className="botao-editar" />
-                </button>
-              </div>
-              <div className="product-info col-md-1"> 
-                <button className='botao-excluir' onClick={() => handleDelete(product.id)}>
-                  <img src="/excluir.png" alt="Excluir" className="botao-excluir" />
-                </button>
-              </div>
-              </div>
+              <div className="col-md-4"><strong>Nome</strong></div>
+              <div className="col-md-4"><strong>Tipo</strong></div>
+              <div className="col-md-2"><strong>Preço</strong></div>
+            </div>
           </li>
-        ))}
-      </ul>
-      <Link to="/cadastro-produto">
-        <img src="/adicionar.png" alt="Adicionar" className="botao-adicionar" />
-      </Link>
+          {products.map((product) => (
+            <li key={product.id} className="product-item">
+              <div className="row">
+                <div className="product-info col-md-4">{product.nome}</div>
+                <div className="product-info col-md-4">{product.tipo_produto}</div>
+                <div className="product-info col-md-2">{product.preco_venda}</div>
+                <div className="product-info col-md-1">
+                  <button className='botao-editar' onClick={() => handleUpdate(product.id)}>
+                    <img src="/editar.png" alt="Atualizar" className="botao-editar" />
+                  </button>
+                </div>
+                <div className="product-info col-md-1"> 
+                  <button className='botao-excluir' onClick={() => handleDelete(product.id)}>
+                    <img src="/excluir.png" alt="Excluir" className="botao-excluir" />
+                  </button>
+                </div>
+                </div>
+            </li>
+          ))}
+        </ul>
+        <Link to="/cadastro-produto">
+          <img src="/adicionar.png" alt="Adicionar" className="botao-adicionar" />
+        </Link>
+      </div>
     </div>
   );
 };
