@@ -90,10 +90,10 @@ const ProductList = ({ token }) => {
           </li>
           {products.map((product) => (
             <li key={product.id} className="product-item">
-              <div className="row">
-                <div className="col product-bla">{product.nome}</div>
-                <div className="col product-bla">{product.tipo_produto}</div>
-                <div className="col product-blapreco">{product.preco_venda}</div>
+              <div className="row linhas">
+                <div className="col product-nome-item">{product.nome}</div>
+                <div className="col product-tipo-item">{product.tipo_produto}</div>
+                <div className="col product-preco-item">{product.preco_venda}</div>
                 <button className='col botao-editar' onClick={() => handleUpdate(product.id)}>
                   <img src="/editar.png" alt="Atualizar" className="botao-editar" />
                 </button>
