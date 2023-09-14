@@ -5,7 +5,6 @@
   opacity: 0.8;
   border: none;
   background: none;
-  /* Remova ou reduza a margem à esquerda */
 }
 
 .botao-excluir {
@@ -15,7 +14,6 @@
   opacity: 0.8;
   border: none;
   background: none;
-  /* Remova ou reduza a margem à esquerda */
 }
 
 
@@ -24,7 +22,7 @@
     height: 40px;
     flex-shrink: 0;
     opacity: 0.8;
-    border: none; /* Remova a borda */
+    border: none;
 }
 
 .product-list {
@@ -35,29 +33,27 @@
 .product-item {
   margin-bottom: 10px;
   padding: 10px;
-  border: none; /* Remova a borda */
+  border: none;
   border-radius: 6px;
-  background-color: #ffffff; /* Cor de fundo branca */
+  background-color: #ffffff; 
 }
 
 .product-info {
   margin-bottom: 5px;
-  border-bottom: 1px solid #000000; /* Adiciona uma borda inferior */
-  padding-bottom: 5px; /* Espaço abaixo da borda */
+  border-bottom: 1px solid #000000; 
+  padding-bottom: 5px; 
 }
 
 .product-header {
   margin-bottom: 10px;
   padding: 10px;
-  border: none; /* Remova a borda */
+  border: none; 
   border-radius: 6px;
-  border-bottom: 1px solid #000000; /* Adiciona uma borda inferior */
+  border-bottom: 1px solid #000000; 
 }
 
 .listagem-heading {
   color: var(--Primary, #545F71);
-
-  /* Estilos de tipografia */
   font-size: 32px;
   font-style: normal;
   font-weight: 700;
@@ -77,7 +73,7 @@
 
 .product-blaprecoheader {
   margin-left: 90px; 
-  margin-right: 140px;
+  margin-right: 10px;
 }
 
 .product-nome-item {
@@ -94,6 +90,12 @@
 
 .product-preco-item {
   margin-left: 620px; 
+  margin-right: 10px;
+  position: absolute;
+}
+
+.product-quantidade-item {
+  margin-left: 820px; 
   margin-right: 10px;
   position: absolute;
 }

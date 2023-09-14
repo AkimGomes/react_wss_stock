@@ -65,6 +65,7 @@ const ProductList = ({ token }) => {
               <div className="col product-bla"><strong>Nome</strong></div>
               <div className="col product-bla"><strong>Tipo</strong></div>
               <div className="col product-blaprecoheader"><strong>Preço</strong></div>
+              <div className='col product-bla'><strong>Quantidade</strong></div>
             </div>
           </li>
           {products.map((product) => (
@@ -73,6 +74,7 @@ const ProductList = ({ token }) => {
                 <div className="col product-nome-item">{product.nome}</div>
                 <div className="col product-tipo-item">{product.tipo_produto}</div>
                 <div className="col product-preco-item">{product.preco_venda}</div>
+                <div className="col product-quantidade-item">{product.quantidade}</div>
                 <div className="col" style={{ display: 'flex', justifyContent: 'flex-end' }}>
                   <Link to={`/atualiza-produto/${product.id}`}>
                     <button className='botao-editar'>

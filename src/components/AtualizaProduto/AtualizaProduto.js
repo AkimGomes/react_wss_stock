@@ -102,7 +102,6 @@ const AtualizaProduto = ({ token }) => {
               name="nome"
               value={productData.nome}
               onChange={handleInputChange}
-              required
               maxLength={24}
             />
           </div>
@@ -114,7 +113,6 @@ const AtualizaProduto = ({ token }) => {
               name="descricao"
               value={productData.descricao}
               onChange={handleInputChange}
-              required
               maxLength={24}
             />
           </div>
@@ -126,7 +124,6 @@ const AtualizaProduto = ({ token }) => {
               name="preco_custo"
               value={productData.preco_custo}
               onChange={handleInputChange}
-              required
               maxLength={24}
             />
           </div>
@@ -138,7 +135,6 @@ const AtualizaProduto = ({ token }) => {
               name="preco_venda"
               value={productData.preco_venda}
               onChange={handleInputChange}
-              required
               maxLength={24}
             />
           </div>
@@ -150,7 +146,6 @@ const AtualizaProduto = ({ token }) => {
               name="tipo_produto"
               value={productData.tipo_produto}
               onChange={handleInputChange}
-              required
               maxLength={24}
             />
           </div>
@@ -162,7 +157,6 @@ const AtualizaProduto = ({ token }) => {
               name="descricao_tipo"
               value={productData.descricao_tipo}
               onChange={handleInputChange}
-              required
               maxLength={24}
             />
           </div>
@@ -174,7 +168,6 @@ const AtualizaProduto = ({ token }) => {
               name="quantidade"
               value={productData.quantidade}
               onChange={handleInputChange}
-              required
               maxLength={24}
             />
           </div>
