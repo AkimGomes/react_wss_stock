@@ -3,7 +3,8 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './components/Login/Login';
 import ProductList from './components/ListaProdutos/ProductList';
-import CadastroProduto from './components/CadastroProduto'; 
+import CadastroProduto from './components/CadastroProduto';
+import AtualizaProduto from './components/AtualizaProduto/AtualizaProduto'; // Importe o componente AtualizaProduto
 
 function App() {
   const [token, setToken] = useState('');
@@ -28,21 +29,22 @@ function App() {
 
   return (
     <div className="app">
-    <div className="Logo-image-container">
-      <img src="/wsslogo.png" alt="Logo" className="Logo-image" />
+      <div className="Logo-image-container">
+        <img src="/wsslogo.png" alt="Logo" className="Logo-image" />
+      </div>
+      <Router>
+        {!token ? (
+          <Login onLogin={handleLogin} />
+        ) : (
+          <Routes>
+            <Route path="/login" element={<Login onLogin={handleLogin} />} />
+            <Route path="/produtos" element={<ProductList token={token} />} />
+            <Route path="/cadastro-produto" element={<CadastroProduto token={token} />} />
+            <Route path="/atualiza-produto/:id" element={<AtualizaProduto token={token} />} />
+          </Routes>
+        )}
+      </Router>
     </div>
-    <Router>
-      {!token ? (
-        <Login onLogin={handleLogin} />
-      ) : (
-        <Routes>
-        <Route path="/login" element={<Login onLogin={handleLogin}/>} />
-        <Route path="/produtos" element={<ProductList token={token} />} />
-        <Route path="/cadastro-produto" element={<CadastroProduto token={token} />} />
-      </Routes>
-      )}
-    </Router>
-  </div>
   );
 }
 
