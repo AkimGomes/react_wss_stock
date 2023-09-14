@@ -1,30 +1,23 @@
 .botao-editar {
-    width: 24px;
-    height: 24px;
-    flex-shrink: 0;
-    opacity: 0.8;   
-    border: none; /* Remova a borda */
-    background: none; /* Fundo branco */
-    margin-right: 0px; /* Adicione a margem desejada à direita */
-    margin-left: -100px;
-    margin-top: -10px;
-    margin-bottom: 20px;
-    position: absolute;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  opacity: 0.8;
+  border: none;
+  background: none;
+  /* Remova ou reduza a margem à esquerda */
 }
 
 .botao-excluir {
-    width: 24px;
-    height: 24px;
-    flex-shrink: 0;
-    opacity: 0.8;
-    border: none; /* Remova a borda */
-    background: none; /* Fundo branco */
-    margin-right: 0px; /* Adicione a margem desejada à direita */
-    margin-left: -80px; /* Adicione a margem desejada à direita */
-    margin-top: -10px;
-    margin-bottom: 20px;
-    position: absolute;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  opacity: 0.8;
+  border: none;
+  background: none;
+  /* Remova ou reduza a margem à esquerda */
 }
+
 
 .botao-adicionar {
     width: 40px;

@@ -81,6 +81,7 @@ const CadastroProduto = ({ token }) => {
               value={productData.nome}
               onChange={handleInputChange}
               required
+              maxLength={24}
             />
           </div>
           <div className='row'>
@@ -92,6 +93,7 @@ const CadastroProduto = ({ token }) => {
               value={productData.descricao}
               onChange={handleInputChange}
               required
+              maxLength={24}
             />
           </div>
           <div className='row'>
@@ -103,6 +105,7 @@ const CadastroProduto = ({ token }) => {
               value={productData.preco_custo}
               onChange={handleInputChange}
               required
+              maxLength={24}
             />
           </div>
           <div className='row'>
@@ -114,6 +117,7 @@ const CadastroProduto = ({ token }) => {
               value={productData.preco_venda}
               onChange={handleInputChange}
               required
+              maxLength={24}
             />
           </div>
           <div className='row'>
@@ -125,6 +129,7 @@ const CadastroProduto = ({ token }) => {
               value={productData.tipo_produto}
               onChange={handleInputChange}
               required
+              maxLength={24}
             />
           </div>
           <div className='row'>
@@ -136,6 +141,7 @@ const CadastroProduto = ({ token }) => {
               value={productData.descricao_tipo}
               onChange={handleInputChange}
               required
+              maxLength={24}
             />
           </div>
           <div className='row'>
@@ -147,6 +153,7 @@ const CadastroProduto = ({ token }) => {
               value={productData.quantidade}
               onChange={handleInputChange}
               required
+              maxLength={24}
             />
           </div>
           <div className='row'>

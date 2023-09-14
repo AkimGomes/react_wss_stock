@@ -26,27 +26,6 @@ const ProductList = ({ token }) => {
     fetchProducts();
   }, [token]);
 
-  const handleUpdate = async (id) => {
-    try {
-      const response = await fetch(`http://127.0.0.1:8000/produtos/${id}/`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({}),
-      });
-
-      if (response.ok) {
-        fetchProducts();
-      } else {
-        console.error('Erro ao atualizar o produto');
-      }
-    } catch (error) {
-      console.error('Erro ao atualizar o produto:', error);
-    }
-  };
-
   const handleDelete = async (id) => {
     try {
       const response = await fetch(`http://127.0.0.1:8000/produtos/${id}/`, {
@@ -94,12 +73,16 @@ const ProductList = ({ token }) => {
                 <div className="col product-nome-item">{product.nome}</div>
                 <div className="col product-tipo-item">{product.tipo_produto}</div>
                 <div className="col product-preco-item">{product.preco_venda}</div>
-                <button className='col botao-editar' onClick={() => handleUpdate(product.id)}>
-                  <img src="/editar.png" alt="Atualizar" className="botao-editar" />
-                </button>
-                <button className='col botao-excluir' onClick={() => handleDelete(product.id)}>
-                  <img src="/excluir.png" alt="Excluir" className="botao-excluir" />
-                </button>
+                <div className="col" style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                  <Link to={`/atualiza-produto/${product.id}`}>
+                    <button className='botao-editar'>
+                      <img src="/editar.png" alt="Atualizar" className="botao-editar" />
+                    </button>
+                  </Link>
+                  <button className='botao-excluir' onClick={() => handleDelete(product.id)}>
+                    <img src="/excluir.png" alt="Excluir" className="botao-excluir" />
+                  </button>
+                </div>
                 </div>
             </li>
           ))}
