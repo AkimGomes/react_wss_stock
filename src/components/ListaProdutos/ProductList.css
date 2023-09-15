@@ -16,6 +16,15 @@
   background: none;
 }
 
+.botao-buscar {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  opacity: 0.6;
+  border: none;
+  background: none;
+}
+
 
 .botao-adicionar {
     width: 40px;
@@ -103,4 +112,29 @@
 .linhas {
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.search-input-container {
+  display: flex;
+  align-items: center; /* Centralize verticalmente */
+}
+
+.search-input {
+  border: 1px solid #ccc; /* Borda fina cinza */
+  border-radius: 20px; /* Cantos arredondados */
+  padding: 5px 10px; /* Espaçamento interno */
+  flex-grow: 1; /* Cresce para ocupar o espaço restante */
+  margin-right: 10px; /* Espaçamento à direita do input */
+}
+
+.botao-buscar {
+  background-color: transparent; /* Fundo transparente */
+  border: none; /* Sem borda */
+  cursor: pointer; /* Mostrar cursor de mão ao passar o mouse */
+}
+
+/* Estilo para imagem dentro do botão */
+.botao-buscar img {
+  width: 20px; /* Largura da imagem */
+  height: 20px; /* Altura da imagem */
 }
