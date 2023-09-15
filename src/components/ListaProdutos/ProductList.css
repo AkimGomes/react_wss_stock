@@ -16,15 +16,6 @@
   background: none;
 }
 
-.botao-buscar {
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-  opacity: 0.6;
-  border: none;
-  background: none;
-}
-
 
 .botao-adicionar {
     width: 40px;
