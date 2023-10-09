@@ -1,0 +1,62 @@
+.botao-cadastro {
+    display: flex;
+    width: 327px;
+    height: 48px;
+    padding: 12px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 6px;
+    background: var(--Primary, #545F71);
+    color: white;
+    border: none; 
+}
+
+.cadastro-heading {
+    color: var(--Primary, #545F71);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 36px;
+    letter-spacing: -0.64px;
+}
+
+.input-cadastro {
+    display: flex;
+    width: 327px; 
+    height: 48px; 
+    padding: 12px 16px;
+    gap: 12px;
+    border-radius: 6px;
+    border: 1px solid var(--Primary, #545F71);
+    background: var(--White, #FFF);
+    align-items: center;
+}
+
+.botao-home {
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
+    opacity: 0.8;
+    background: var(--White, #FFF);
+    border: none;
+    position: fixed; /* Fixa o botão na posição */
+    top: 80px; /* Distância da parte superior da janela de visualização */
+    right: 200px; /* Distância da parte direita da janela de visualização */
+    cursor: pointer;
+  }
+
+.botao-deslogar {
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
+    opacity: 0.8;
+    background: var(--White, #FFF);
+    border: none;
+    position: fixed; /* Fixa o botão na posição */
+    top: 80px; /* Distância da parte superior da janela de visualização */
+    right: 150px; /* Distância da parte direita da janela de visualização */
+    cursor: pointer;
+  }
+  
+

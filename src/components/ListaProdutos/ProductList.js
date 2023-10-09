@@ -131,7 +131,7 @@ const ProductList = ({ token }) => {
           <img src="/adicionar.png" alt="Adicionar" className="botao-adicionar" />
         </Link>
         <Link to="/vendas">
-          <button>Ver Lista de Vendas</button>
+          <img src='/vendas.png' alt='Vendas' className="botao-vendas"/>
         </Link>
       </div>
     </div>

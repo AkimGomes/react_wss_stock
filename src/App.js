@@ -6,6 +6,7 @@ import ProductList from './components/ListaProdutos/ProductList';
 import CadastroProduto from './components/CadastroProduto';
 import AtualizaProduto from './components/AtualizaProduto/AtualizaProduto';
 import ListaVendas from './components/ListaVendas/ListaVendas';
+import CadastroVenda from './components/CadastroVenda/CadastroVenda';
 
 function App() {
   const [token, setToken] = useState('');
@@ -43,6 +44,7 @@ function App() {
             <Route path="/cadastro-produto" element={<CadastroProduto token={token} />} />
             <Route path="/atualiza-produto/:id" element={<AtualizaProduto token={token} />} />
             <Route path="/vendas" element={<ListaVendas token={token} />} />
+            <Route path="/cadastro-venda" element={<CadastroVenda token={token} />} />
           </Routes>
         )}
       </Router>
