@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './ListaVendas.css';
 import { useNavigate } from 'react-router-dom';
+import InfoModal from '../InfoModal';
 
 const ListaVendas = ({ token }) => {
   const navigate = useNavigate();
@@ -48,7 +49,7 @@ const ListaVendas = ({ token }) => {
 
   const handleLogout = () => {
     localStorage.removeItem('token');
-    navigate('/login'); 
+    navigate('/login');
   };
 
   const handleReturnClick = () => {
@@ -58,7 +59,7 @@ const ListaVendas = ({ token }) => {
   const handleSearch = async (event) => {
     event.preventDefault();
     try {
-        const response = await fetch(`http://127.0.0.1:8000/vendas/buscar/?buscar=${searchTerm}`, {
+      const response = await fetch(`http://127.0.0.1:8000/vendas/buscar/?buscar=${searchTerm}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -75,11 +76,24 @@ const ListaVendas = ({ token }) => {
     }
   };
 
+  const [infoModalIsOpen, setInfoModalIsOpen] = useState(false);
+  const [infoModalData, setInfoModalData] = useState(null);
+
+  const openInfoModal = (venda) => {
+    setInfoModalData(venda);
+    setInfoModalIsOpen(true);
+  };
+
+  const closeInfoModal = () => {
+    setInfoModalData(null);
+    setInfoModalIsOpen(false);
+  };
+
   return (
     <div>
       <div>
         <button className="botao-home" onClick={handleReturnClick}>
-          <img src="/home.png"/>
+          <img src="/home.png" alt="Home" />
         </button>
       </div>
       <div>
@@ -90,21 +104,21 @@ const ListaVendas = ({ token }) => {
       <div className='container'>
         <h2 className='listagem-heading'>Lista de Vendas</h2>
         <form onSubmit={handleSearch}>
-        <div className='row'>
-          <div className='search-input-container'>
-            <input
-              type="text"
-              className='search-input'
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              maxLength={24}
-              placeholder="Digite o nome da venda..."
-            />
-            <button className='botao-buscar' type="submit">
-              <img src='buscar.png' alt='Buscar' className='botao-buscar' />
-            </button>
+          <div className='row'>
+            <div className='search-input-container'>
+              <input
+                type="text"
+                className='search-input'
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                maxLength={24}
+                placeholder="Digite o nome da venda..."
+              />
+              <button className='botao-buscar' type="submit">
+                <img src='buscar.png' alt='Buscar' className='botao-buscar' />
+              </button>
+            </div>
           </div>
-        </div>
         </form>
         <ul className="product-list">
           <li className="product-header">
@@ -124,6 +138,9 @@ const ListaVendas = ({ token }) => {
                   <button className='botao-excluir' onClick={() => handleDelete(venda.id)}>
                     <img src="/excluir.png" alt="Excluir" className="botao-excluir" />
                   </button>
+                  <button className='botao-editar' onClick={() => openInfoModal(venda)}>
+                    <img src="/informacoes.png" alt="Informações" className="botao-info" />
+                  </button>
                 </div>
               </div>
             </li>
@@ -132,6 +149,12 @@ const ListaVendas = ({ token }) => {
         <Link to="/cadastro-venda">
           <img src="/adicionar.png" alt="Adicionar" className="botao-adicionar" />
         </Link>
+        <InfoModal
+          isOpen={infoModalIsOpen}
+          onClose={closeInfoModal}
+          vendaInfo={infoModalData}
+          token={token}
+        />
       </div>
     </div>
   );
