@@ -1,35 +1,35 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './ProductList.css';
+import './ListaVendas.css';
 import { useNavigate } from 'react-router-dom';
 
-const ProductList = ({ token }) => {
+const ListaVendas = ({ token }) => {
   const navigate = useNavigate();
-  const [products, setProducts] = useState([]);
+  const [vendas, setVendas] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
-  const fetchProducts = async () => {
+  const fetchVendas = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:8000/produtos/', {
+      const response = await fetch('http://127.0.0.1:8000/vendas/', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
 
       const data = await response.json();
-      setProducts(data.results);
+      setVendas(data.results);
     } catch (error) {
-      console.error('Erro ao buscar produtos:', error);
+      console.error('Erro ao buscar vendas:', error);
     }
   };
 
   useEffect(() => {
-    fetchProducts();
+    fetchVendas();
   }, [token]);
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`http://127.0.0.1:8000/produtos/${id}/`, {
+      const response = await fetch(`http://127.0.0.1:8000/vendas/${id}/`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -37,12 +37,12 @@ const ProductList = ({ token }) => {
       });
 
       if (response.ok) {
-        fetchProducts();
+        fetchVendas();
       } else {
-        console.error('Erro ao excluir o produto');
+        console.error('Erro ao excluir a venda');
       }
     } catch (error) {
-      console.error('Erro ao excluir o produto:', error);
+      console.error('Erro ao excluir a venda:', error);
     }
   };
 
@@ -51,10 +51,14 @@ const ProductList = ({ token }) => {
     navigate('/login'); 
   };
 
+  const handleReturnClick = () => {
+    navigate('/produtos');
+  };
+
   const handleSearch = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch(`http://127.0.0.1:8000/produtos/buscar/?buscar=${searchTerm}`, {
+        const response = await fetch(`http://127.0.0.1:8000/vendas/buscar/?buscar=${searchTerm}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -62,24 +66,29 @@ const ProductList = ({ token }) => {
 
       if (response.ok) {
         const data = await response.json();
-        setProducts(data);
+        setVendas(data);
       } else {
-        console.error('Erro ao buscar produtos');
+        console.error('Erro ao buscar vendas');
       }
     } catch (error) {
-      console.error('Erro ao buscar produtos:', error);
+      console.error('Erro ao buscar vendas:', error);
     }
   };
 
   return (
     <div>
       <div>
+        <button className="botao-home" onClick={handleReturnClick}>
+          <img src="/home.png"/>
+        </button>
+      </div>
+      <div>
         <button className="botao-deslogar" onClick={handleLogout}>
           <img src="/deslogar.png" alt="Deslogar" />
         </button>
       </div>
       <div className='container'>
-        <h2 className='listagem-heading'>Lista de Produtos</h2>
+        <h2 className='listagem-heading'>Lista de Vendas</h2>
         <form onSubmit={handleSearch}>
         <div className='row'>
           <div className='search-input-container'>
@@ -89,7 +98,7 @@ const ProductList = ({ token }) => {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               maxLength={24}
-              placeholder="Digite o nome do produto..."
+              placeholder="Digite o nome da venda..."
             />
             <button className='botao-buscar' type="submit">
               <img src='buscar.png' alt='Buscar' className='botao-buscar' />
@@ -100,26 +109,19 @@ const ProductList = ({ token }) => {
         <ul className="product-list">
           <li className="product-header">
             <div className="row">
-              <div className="col product-bla"><strong>Nome</strong></div>
-              <div className="col product-bla"><strong>Tipo</strong></div>
-              <div className="col product-blaprecoheader"><strong>Preço</strong></div>
-              <div className='col product-bla'><strong>Quantidade</strong></div>
+              <div className="col product-bla"><strong>Data</strong></div>
+              <div className="col product-bla"><strong>Observação</strong></div>
+              <div className="col product-blaprecoheader"><strong>Preço Total</strong></div>
             </div>
           </li>
-          {products.map((product) => (
-            <li key={product.id} className="product-item">
+          {vendas.map((venda) => (
+            <li key={venda.id} className="product-item">
               <div className="row linhas">
-                <div className="col product-nome-item">{product.nome}</div>
-                <div className="col product-tipo-item">{product.tipo_produto}</div>
-                <div className="col product-preco-item">{product.preco_venda}</div>
-                <div className="col product-quantidade-item">{product.quantidade}</div>
+                <div className="col product-nome-item">{venda.data}</div>
+                <div className="col product-tipo-item">{venda.observacao}</div>
+                <div className="col product-preco-item">{venda.preco_total}</div>
                 <div className="col" style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                  <Link to={`/atualiza-produto/${product.id}`}>
-                    <button className='botao-editar'>
-                      <img src="/editar.png" alt="Atualizar" className="botao-editar" />
-                    </button>
-                  </Link>
-                  <button className='botao-excluir' onClick={() => handleDelete(product.id)}>
+                  <button className='botao-excluir' onClick={() => handleDelete(venda.id)}>
                     <img src="/excluir.png" alt="Excluir" className="botao-excluir" />
                   </button>
                 </div>
@@ -127,15 +129,12 @@ const ProductList = ({ token }) => {
             </li>
           ))}
         </ul>
-        <Link to="/cadastro-produto">
+        <Link to="/cadastro-venda">
           <img src="/adicionar.png" alt="Adicionar" className="botao-adicionar" />
-        </Link>
-        <Link to="/vendas">
-          <button>Ver Lista de Vendas</button>
         </Link>
       </div>
     </div>
   );
 };
 
-export default ProductList;
+export default ListaVendas;
