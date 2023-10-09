@@ -4,6 +4,11 @@ const InfoModal = ({ isOpen, onClose, vendaInfo, token }) => {
   const [produtosComNome, setProdutosComNome] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const formatData = (dateStr) => {
+    const date = new Date(dateStr);
+    return `${date.toLocaleDateString()} - ${date.toLocaleTimeString().split(':').slice(0, 2).join(':')}`;
+  };
+
   useEffect(() => {
     if (vendaInfo) {
       const produtosVenda = vendaInfo.produtos_venda;
@@ -57,7 +62,7 @@ const InfoModal = ({ isOpen, onClose, vendaInfo, token }) => {
             <h5 className="modal-title">Informações da Venda</h5>
           </div>
           <div className="modal-body">
-            <p>Data: {vendaInfo.data}</p>
+            <p>Data: {formatData(vendaInfo.data)}</p>
             <p>Observação: {vendaInfo.observacao}</p>
             <p>Preço Total: {vendaInfo.preco_total}</p>
             <h4>Produtos:</h4>

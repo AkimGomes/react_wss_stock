@@ -89,6 +89,12 @@ const ListaVendas = ({ token }) => {
     setInfoModalIsOpen(false);
   };
 
+  const formatData = (dateStr) => {
+    const date = new Date(dateStr);
+    const formattedDate = `${date.toLocaleDateString()} - ${date.toLocaleTimeString().split(':').slice(0, 2).join(':')}`;
+    return formattedDate;
+  };
+
   return (
     <div>
       <div>
@@ -131,7 +137,7 @@ const ListaVendas = ({ token }) => {
           {vendas.map((venda) => (
             <li key={venda.id} className="product-item">
               <div className="row linhas">
-                <div className="col product-nome-item">{venda.data}</div>
+                <div className="col product-nome-item">{formatData(venda.data)}</div>
                 <div className="col product-tipo-item">{venda.observacao}</div>
                 <div className="col product-preco-item">{venda.preco_total}</div>
                 <div className="col" style={{ display: 'flex', justifyContent: 'flex-end' }}>
