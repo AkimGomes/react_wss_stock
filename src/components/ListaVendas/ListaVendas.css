@@ -61,34 +61,34 @@
     letter-spacing: -0.64px;
   }
   
-  .product-bla {
-    margin-left: 100px; 
-    margin-right: 100px;
+  .venda-bla {
+    margin-left: 110px; 
+    margin-right: 80px;
   }
-  
+
   .product-blapreco {
     margin-left: 100px; 
     margin-right: 25px;
   }
   
-  .product-blaprecoheader {
-    margin-left: 90px; 
-    margin-right: 10px;
+  .venda-blaprecoheader {
+    margin-left: 40px; 
+    margin-right: 100px;
   }
   
-  .product-nome-item {
-    margin-left: 102px; 
-    margin-right: 100px;
+  .venda-nome-item {
+    margin-left: 70px; 
+    margin-right: 200px;
     position: absolute;
   }
   
-  .product-tipo-item {
-    margin-left: 365px; 
+  .venda-tipo-item {
+    margin-left: 385px; 
     margin-right: 300px;
     position: absolute;
   }
   
-  .product-preco-item {
+  .venda-preco-item {
     margin-left: 620px; 
     margin-right: 10px;
     position: absolute;

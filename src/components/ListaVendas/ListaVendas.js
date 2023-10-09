@@ -129,18 +129,18 @@ const ListaVendas = ({ token }) => {
         <ul className="product-list">
           <li className="product-header">
             <div className="row">
-              <div className="col product-bla"><strong>Data</strong></div>
-              <div className="col product-bla"><strong>Observação</strong></div>
-              <div className="col product-blaprecoheader"><strong>Preço Total</strong></div>
+              <div className="col venda-bla"><strong>Data</strong></div>
+              <div className="col venda-bla"><strong>Observação</strong></div>
+              <div className="col venda-blaprecoheader"><strong>Preço Total</strong></div>
             </div>
           </li>
           {vendas.map((venda) => (
             <li key={venda.id} className="product-item">
               <div className="row linhas">
-                <div className="col product-nome-item">{formatData(venda.data)}</div>
-                <div className="col product-tipo-item">{venda.observacao}</div>
-                <div className="col product-preco-item">{venda.preco_total}</div>
-                <div className="col" style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                <div className="col venda-nome-item">{formatData(venda.data)}</div>
+                <div className="col venda-tipo-item">{venda.observacao}</div>
+                <div className="col venda-preco-item">{venda.preco_total}</div>
+                <div className="col botoes" style={{ display: 'flex', justifyContent: 'flex-end' }}>
                   <button className='botao-excluir' onClick={() => handleDelete(venda.id)}>
                     <img src="/excluir.png" alt="Excluir" className="botao-excluir" />
                   </button>
