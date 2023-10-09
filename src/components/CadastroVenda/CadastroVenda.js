@@ -171,7 +171,8 @@ const CadastroVenda = ({ token }) => {
             <label>Produtos</label>
             <select
               multiple
-              className='input-cadastro'
+              className='form-select'
+              size={5}
               name="produtos_venda"
               value={vendaData.produtos_venda.map((produto) => produto.produto_vendido)}
               onChange={handleProdutoChange}
