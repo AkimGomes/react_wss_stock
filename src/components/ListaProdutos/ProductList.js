@@ -115,8 +115,8 @@ const ProductList = ({ token }) => {
                 <div className="col product-quantidade-item">{product.quantidade}</div>
                 <div className="col" style={{ display: 'flex', justifyContent: 'flex-end' }}>
                   <Link to={`/atualiza-produto/${product.id}`}>
-                    <button className='botao-editar'>
-                      <img src="/editar.png" alt="Atualizar" className="botao-editar" />
+                    <button className='botao-excluir'>
+                      <img src="/editar.png" alt="Atualizar" className="botao-excluir" />
                     </button>
                   </Link>
                   <button className='botao-excluir' onClick={() => handleDelete(product.id)}>
