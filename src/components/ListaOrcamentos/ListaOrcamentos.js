@@ -154,7 +154,7 @@ const ListaOrcamentos = ({ token }) => {
             </li>
           ))}
         </ul>
-        <Link to="/cadastro-venda">
+        <Link to="/cadastro-orcamento">
           <img src="/adicionar.png" alt="Adicionar" className="botao-adicionar" />
         </Link>
         <InfoModalOrcamentos
