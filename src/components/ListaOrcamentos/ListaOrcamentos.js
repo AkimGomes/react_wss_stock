@@ -129,19 +129,19 @@ const ListaOrcamentos = ({ token }) => {
         <ul className="product-list">
           <li className="product-header">
             <div className="row">
-            <div className="col venda-blaprecoheader"><strong>Data</strong></div>
-              <div className="col venda-bla"><strong>Nome</strong></div>
-              <div className="col venda-bla"><strong>Descrição</strong></div>
-              <div className="col venda-blaprecoheader"><strong>Valor</strong></div>
+              <div className="col orcamento-data"><strong>Data</strong></div>
+              <div className="col orcamento-nome"><strong>Nome</strong></div>
+              <div className="col orcamento-descricao"><strong>Descrição</strong></div>
+              <div className="col orcamento-valor"><strong>Valor</strong></div>
             </div>
           </li>
           {orcamentos.map((orcamento) => (
             <li key={orcamento.id} className="product-item">
               <div className="row linhas">
-                <div className="col venda-nome-item">{formatData(orcamento.data_orcamento)}</div>
-                <div className="col venda-tipo-item">{orcamento.nome}</div>
-                <div className="col venda-preco-item">{orcamento.descricao}</div>
-                <div className="col venda-preco-item">{orcamento.valor_orcamento}</div>
+                <div className="col orcamento-data-item">{formatData(orcamento.data_orcamento)}</div>
+                <div className="col orcamento-nome-item">{orcamento.nome}</div>
+                <div className="col orcamento-descricao-item">{orcamento.descricao}</div>
+                <div className="col orcamento-valor-item">{orcamento.valor_orcamento}</div>
                 <div className="col botoes" style={{ display: 'flex', justifyContent: 'flex-end' }}>
                   <button className='botao-excluir' onClick={() => handleDelete(orcamento.id)}>
                     <img src="/excluir.png" alt="Excluir" className="botao-excluir" />

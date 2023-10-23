@@ -72,24 +72,55 @@
   }
   
   .venda-blaprecoheader {
-    margin-left: 40px; 
+    margin-left: 120px; 
     margin-right: 100px;
   }
+
+  .orcamento-blaprecoheader {
+    margin-left: 120px; 
+    margin-right: 100px;
+  }
+
+  .orcamento-data {
+    margin-left: 110px; 
+    margin-right: 80px;
+  }
+
+  .orcamento-nome {
+    margin-left: 110px; 
+    margin-right: 80px;
+  }
+
+  .orcamento-descricao {
+    margin-left: 110px; 
+    margin-right: 80px;
+  }
+
+  .orcamento-valor {
+    margin-left: 80px; 
+    margin-right: 80px;
+  }
   
-  .venda-nome-item {
-    margin-left: 70px; 
+  .orcamento-data-item {
+    margin-left: 60px; 
     margin-right: 200px;
     position: absolute;
   }
   
-  .venda-tipo-item {
-    margin-left: 385px; 
+  .orcamento-nome-item {
+    margin-left: 305px; 
     margin-right: 300px;
     position: absolute;
   }
   
-  .venda-preco-item {
-    margin-left: 620px; 
+  .orcamento-descricao-item {
+    margin-left: 570px; 
+    margin-right: 10px;
+    position: absolute;
+  }
+
+  .orcamento-valor-item {
+    margin-left: 870px; 
     margin-right: 10px;
     position: absolute;
   }
