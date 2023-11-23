@@ -136,6 +136,9 @@ const ProductList = ({ token }) => {
         <Link to="/orcamentos">
             <img src='/orcamentos.png' alt='Orcamentos' className='botao-orcamentos' />
         </Link>
+        <Link to="/clientes">
+            <img src='/clientes.png' alt='Clientes' className='botao-clientes' />
+        </Link>
       </div>
     </div>
   );

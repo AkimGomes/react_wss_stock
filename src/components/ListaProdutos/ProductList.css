@@ -41,6 +41,14 @@
   border: none;
 }
 
+.botao-clientes {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  opacity: 1;
+  border: none;
+}
+
 .product-list {
   list-style: none;
   padding: 0;
