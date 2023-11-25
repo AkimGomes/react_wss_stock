@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './ProductList.css';
 import { useNavigate } from 'react-router-dom';
+import Header from '../Header';
 
 const ProductList = ({ token }) => {
   const navigate = useNavigate();
@@ -46,11 +47,6 @@ const ProductList = ({ token }) => {
     }
   };
 
-  const handleLogout = () => {
-    localStorage.removeItem('token');
-    navigate('/login'); 
-  };
-
   const handleSearch = async (event) => {
     event.preventDefault();
     try {
@@ -73,11 +69,7 @@ const ProductList = ({ token }) => {
 
   return (
     <div>
-      <div>
-        <button className="botao-deslogar" onClick={handleLogout}>
-          <img src="/deslogar.png" alt="Deslogar" />
-        </button>
-      </div>
+      <Header />
       <div className='container'>
         <h2 className='listagem-heading'>Lista de Produtos</h2>
         <form onSubmit={handleSearch}>
@@ -129,15 +121,6 @@ const ProductList = ({ token }) => {
         </ul>
         <Link to="/cadastro-produto">
           <img src="/adicionar.png" alt="Adicionar" className="botao-adicionar" />
-        </Link>
-        <Link to="/vendas">
-          <img src='/vendas.png' alt='Vendas' className="botao-vendas"/>
-        </Link>
-        <Link to="/orcamentos">
-            <img src='/orcamentos.png' alt='Orcamentos' className='botao-orcamentos' />
-        </Link>
-        <Link to="/clientes">
-            <img src='/clientes.png' alt='Clientes' className='botao-clientes' />
         </Link>
       </div>
     </div>

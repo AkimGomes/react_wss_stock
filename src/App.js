@@ -11,6 +11,7 @@ import ListaOrcamentos from './components/ListaOrcamentos/ListaOrcamentos';
 import CadastroOrcamento from './components/CadastroOrcamento/CadastroOrcamento';
 import ListaClientes from './components/ListaClientes/ListaClientes';
 import AtualizaCliente from './components/AtualizaCliente/AtualizaCliente';
+import Header from './components/Header';
 
 function App() {
   const [token, setToken] = useState('');
