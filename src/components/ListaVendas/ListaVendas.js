@@ -144,7 +144,7 @@ const ListaVendas = ({ token }) => {
                   <button className='botao-excluir' onClick={() => handleDelete(venda.id)}>
                     <img src="/excluir.png" alt="Excluir" className="botao-excluir" />
                   </button>
-                  <button className='botao-editar' onClick={() => openInfoModal(venda)}>
+                  <button className='botao-info' onClick={() => openInfoModal(venda)}>
                     <img src="/informacoes.png" alt="Informações" className="botao-info" />
                   </button>
                 </div>

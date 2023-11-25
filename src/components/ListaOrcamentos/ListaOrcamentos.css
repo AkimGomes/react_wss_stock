@@ -1,162 +1,171 @@
 .botao-editar {
-    width: 24px;
-    height: 24px;
-    flex-shrink: 0;
-    opacity: 0.3;
-    border: none;
-    background: none;
-  }
-  
-  .botao-excluir {
-    width: 24px;
-    height: 24px;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  opacity: 0.3;
+  border: none;
+  background: none;
+}
+
+.botao-info {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  opacity: 0.6;
+  border: none;
+  background: none;
+}
+
+.botao-excluir {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  opacity: 0.8;
+  border: none;
+  background: none;
+}
+
+
+.botao-adicionar {
+    width: 40px;
+    height: 40px;
     flex-shrink: 0;
     opacity: 0.8;
     border: none;
-    background: none;
-  }
-  
-  
-  .botao-adicionar {
-      width: 40px;
-      height: 40px;
-      flex-shrink: 0;
-      opacity: 0.8;
-      border: none;
-  }
-  
-  .product-list {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .product-item {
-    margin-bottom: 10px;
-    padding: 10px;
-    border: none;
-    border-radius: 6px;
-    background-color: #ffffff; 
-  }
-  
-  .product-info {
-    margin-bottom: 5px;
-    border-bottom: 1px solid #000000; 
-    padding-bottom: 5px; 
-  }
-  
-  .product-header {
-    margin-bottom: 10px;
-    padding: 10px;
-    border: none; 
-    border-radius: 6px;
-    border-bottom: 1px solid #000000; 
-  }
-  
-  .listagem-heading {
-    color: var(--Primary, #545F71);
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 36px;
-    letter-spacing: -0.64px;
-  }
-  
-  .venda-bla {
-    margin-left: 110px; 
-    margin-right: 80px;
-  }
+}
 
-  .product-blapreco {
-    margin-left: 100px; 
-    margin-right: 25px;
-  }
-  
-  .venda-blaprecoheader {
-    margin-left: 120px; 
-    margin-right: 100px;
-  }
+.product-list {
+  list-style: none;
+  padding: 0;
+}
 
-  .orcamento-blaprecoheader {
-    margin-left: 120px; 
-    margin-right: 100px;
-  }
+.product-item {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #ffffff; 
+}
 
-  .orcamento-data {
-    margin-left: 110px; 
-    margin-right: 80px;
-  }
+.product-info {
+  margin-bottom: 5px;
+  border-bottom: 1px solid #000000; 
+  padding-bottom: 5px; 
+}
 
-  .orcamento-nome {
-    margin-left: 110px; 
-    margin-right: 80px;
-  }
+.product-header {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: none; 
+  border-radius: 6px;
+  border-bottom: 1px solid #000000; 
+}
 
-  .orcamento-descricao {
-    margin-left: 110px; 
-    margin-right: 80px;
-  }
+.listagem-heading {
+  color: var(--Primary, #545F71);
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: -0.64px;
+}
 
-  .orcamento-valor {
-    margin-left: 80px; 
-    margin-right: 80px;
-  }
-  
-  .orcamento-data-item {
-    margin-left: 60px; 
-    margin-right: 200px;
-    position: absolute;
-  }
-  
-  .orcamento-nome-item {
-    margin-left: 305px; 
-    margin-right: 300px;
-    position: absolute;
-  }
-  
-  .orcamento-descricao-item {
-    margin-left: 570px; 
-    margin-right: 10px;
-    position: absolute;
-  }
+.venda-bla {
+  margin-left: 110px; 
+  margin-right: 80px;
+}
 
-  .orcamento-valor-item {
-    margin-left: 870px; 
-    margin-right: 10px;
-    position: absolute;
-  }
-  
-  .product-quantidade-item {
-    margin-left: 820px; 
-    margin-right: 10px;
-    position: absolute;
-  }
-  
-  .linhas {
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .search-input-container {
-    display: flex;
-    align-items: center; /* Centralize verticalmente */
-  }
-  
-  .search-input {
-    border: 1px solid #ccc; /* Borda fina cinza */
-    border-radius: 20px; /* Cantos arredondados */
-    padding: 5px 10px; /* Espaçamento interno */
-    flex-grow: 1; /* Cresce para ocupar o espaço restante */
-    margin-right: 10px; /* Espaçamento à direita do input */
-  }
-  
-  .botao-buscar {
-    background-color: transparent; /* Fundo transparente */
-    border: none; /* Sem borda */
-    cursor: pointer; /* Mostrar cursor de mão ao passar o mouse */
-  }
-  
-  /* Estilo para imagem dentro do botão */
-  .botao-buscar img {
-    width: 20px; /* Largura da imagem */
-    height: 20px; /* Altura da imagem */
-  }
+.product-blapreco {
+  margin-left: 100px; 
+  margin-right: 25px;
+}
+
+.venda-blaprecoheader {
+  margin-left: 120px; 
+  margin-right: 100px;
+}
+
+.orcamento-blaprecoheader {
+  margin-left: 120px; 
+  margin-right: 100px;
+}
+
+.orcamento-data {
+  margin-left: 110px; 
+  margin-right: 80px;
+}
+
+.orcamento-nome {
+  margin-left: 110px; 
+  margin-right: 80px;
+}
+
+.orcamento-descricao {
+  margin-left: 80px; 
+  margin-right: 80px;
+}
+
+.orcamento-valor {
+  margin-left: 80px; 
+  margin-right: 80px;
+}
+
+.orcamento-data-item {
+  margin-left: 60px; 
+  margin-right: 200px;
+  position: absolute;
+}
+
+.orcamento-nome-item {
+  margin-left: 360px; 
+  margin-right: 300px;
+  position: absolute;
+}
+
+.orcamento-descricao-item {
+  margin-left: 600px; 
+  margin-right: 10px;
+  position: absolute;
+}
+
+.orcamento-valor-item {
+  margin-left: 840px; 
+  margin-right: 10px;
+  position: absolute;
+}
+
+.product-quantidade-item {
+  margin-left: 820px; 
+  margin-right: 10px;
+  position: absolute;
+}
+
+.linhas {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.search-input-container {
+  display: flex;
+  align-items: center; /* Centralize verticalmente */
+}
+
+.search-input {
+  border: 1px solid #ccc; /* Borda fina cinza */
+  border-radius: 20px; /* Cantos arredondados */
+  padding: 5px 10px; /* Espaçamento interno */
+  flex-grow: 1; /* Cresce para ocupar o espaço restante */
+  margin-right: 10px; /* Espaçamento à direita do input */
+}
+
+.botao-buscar {
+  background-color: transparent; /* Fundo transparente */
+  border: none; /* Sem borda */
+  cursor: pointer; /* Mostrar cursor de mão ao passar o mouse */
+}
+
+/* Estilo para imagem dentro do botão */
+.botao-buscar img {
+  width: 20px; /* Largura da imagem */
+  height: 20px; /* Altura da imagem */
+}

@@ -10,6 +10,7 @@ import CadastroVenda from './components/CadastroVenda/CadastroVenda';
 import ListaOrcamentos from './components/ListaOrcamentos/ListaOrcamentos';
 import CadastroOrcamento from './components/CadastroOrcamento/CadastroOrcamento';
 import ListaClientes from './components/ListaClientes/ListaClientes';
+import AtualizaCliente from './components/AtualizaCliente/AtualizaCliente';
 
 function App() {
   const [token, setToken] = useState('');
@@ -51,6 +52,7 @@ function App() {
             <Route path="/orcamentos" element={<ListaOrcamentos token={token} />} />
             <Route path="/cadastro-orcamento" element={<CadastroOrcamento token={token} />} />
             <Route path="/clientes" element={<ListaClientes token={token} />} />
+            <Route path="/atualiza-cliente/:id" element={<AtualizaCliente token={token} />} />
           </Routes>
         )}
       </Router>

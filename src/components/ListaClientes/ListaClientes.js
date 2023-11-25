@@ -90,19 +90,19 @@ const ListaClientes = ({ token }) => {
         <ul className="product-list">
           <li className="product-header">
             <div className="row">
-              <div className="col product-bla"><strong>Nome</strong></div>
-              <div className="col product-bla"><strong>Telefone</strong></div>
-              <div className="col product-blaprecoheader"><strong>Email</strong></div>
+              <div className="col cliente-nome"><strong>Nome</strong></div>
+              <div className="col cliente-telefone"><strong>Telefone</strong></div>
+              <div className="col cliente-email"><strong>Email</strong></div>
             </div>
           </li>
           {clientes.map((cliente) => (
             <li key={cliente.id} className="product-item">
               <div className="row linhas">
-                <div className="col product-nome-item">{cliente.nome}</div>
-                <div className="col product-tipo-item">{cliente.telefone_1}</div>
-                <div className="col product-preco-item">{cliente.email}</div>
+                <div className="col cliente-nome-item">{cliente.nome}</div>
+                <div className="col cliente-telefone-item">{cliente.telefone_1}</div>
+                <div className="col cliente-email-item">{cliente.email}</div>
                 <div className="col" style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                  <Link to={`/atualiza-produto/${cliente.id}`}>
+                  <Link to={`/atualiza-cliente/${cliente.id}`}>
                     <button className='botao-excluir'>
                       <img src="/editar.png" alt="Atualizar" className="botao-excluir" />
                     </button>

@@ -85,35 +85,35 @@
     letter-spacing: -0.64px;
   }
   
-  .product-bla {
-    margin-left: 100px; 
+  .cliente-nome {
+    margin-left: 200px; 
     margin-right: 100px;
   }
+
+  .cliente-telefone {
+    margin-left: 150px; 
+    margin-right: 150px;
+  }
   
-  .product-blapreco {
+  .cliente-email {
     margin-left: 100px; 
-    margin-right: 25px;
+    margin-right: 200px;
   }
   
-  .product-blaprecoheader {
-    margin-left: 90px; 
-    margin-right: 10px;
-  }
-  
-  .product-nome-item {
-    margin-left: 102px; 
+  .cliente-nome-item {
+    margin-left: 170px; 
     margin-right: 100px;
     position: absolute;
   }
   
-  .product-tipo-item {
-    margin-left: 365px; 
+  .cliente-telefone-item {
+    margin-left: 510px; 
     margin-right: 300px;
     position: absolute;
   }
   
-  .product-preco-item {
-    margin-left: 620px; 
+  .cliente-email-item {
+    margin-left: 820px; 
     margin-right: 10px;
     position: absolute;
   }

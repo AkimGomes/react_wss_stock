@@ -146,7 +146,7 @@ const ListaOrcamentos = ({ token }) => {
                   <button className='botao-excluir' onClick={() => handleDelete(orcamento.id)}>
                     <img src="/excluir.png" alt="Excluir" className="botao-excluir" />
                   </button>
-                  <button className='botao-editar' onClick={() => openInfoModal(orcamento)}>
+                  <button className='botao-info' onClick={() => openInfoModal(orcamento)}>
                     <img src="/informacoes.png" alt="Informações" className="botao-info" />
                   </button>
                 </div>
